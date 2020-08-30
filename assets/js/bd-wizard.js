@@ -35,36 +35,13 @@ $("#wizard").steps({
         cancel: "Cancel",
         current: "current step:",
         pagination: "Pagination",
-        finish: "Calulate",
+        finish: "Calculate",
         next: "Next",
         previous: "Previous",
         loading: "Loading ..."
     }
 });
 
-//Form control
-/* 
- title "Paso 2 Title"
- "
-						<h5 class="bd-wizard-step-title">Paso 2</h5>
-						<h2 class="section-heading">Estado de la infrastructura</h2>
-						<p>En este paso se procede a determinar el estado actual de la estructura, diferenciando si nos encontramos ante una rehabilitación o una obra nueva. En el caso de encontrarnos ante una rehabilitación será importante indicar si se llevará a cabo una renovación de los firmes.  </p>
-						<div class="purpose-radios-wrapper">
-							<div class="purpose-radio">
-								<input type="radio" name="C5" id="obranueva" class="purpose-radio-input" value="ON">
-								<label for="obranueva" class="purpose-radio-label">
-									<span class="label-text">Obra nueva</span>
-								</label>
-							</div>
-							<div class="purpose-radio">
-								<input type="radio" name="C5" id="rehabilitacion" class="purpose-radio-input" value="RE">
-								<label for="rehabilitacion" class="purpose-radio-label">
-									<span class="label-text">Rehabilitación</span>
-								</label>
-							</div>
-						</div>
-					"
-*/
 
  function setChange(stepName, stepValue) { 
 	if (typeof gvStep2 === "undefined") { 
@@ -106,6 +83,9 @@ $("#wizard").steps({
 			//Ocultamos paso 3
 			if (stepValue == "ON")  {
 				if  ( gvStep3 == "" ) { 
+					gvStep7 = $("#wizard").steps("getStep", 6);
+					$("#wizard").steps("remove", 6);
+					$('#C7').text("");				
 					gvStep3 = $("#wizard").steps("getStep", 2);
 					$("#wizard").steps("remove", 2);
 					$('#C3').text("");
@@ -113,6 +93,8 @@ $("#wizard").steps({
 			} else if ( gvStep3 ) {
 			    $("#wizard").steps("insert", 2, gvStep3); 
 				gvStep3 = "";
+				$("#wizard").steps("insert", 6, gvStep7); 
+				gvStep7 = "";				
 			}
 			break;
 		case "C5B":   	
@@ -136,13 +118,6 @@ $("#wizard").steps({
 
 }
 	
-$('.purpose-radio-input').on('change', function(e) {
-
- 
-
-    });
-
-
 /* Datos */
  function getVariableName(name) { 
 	return "#" + name; 

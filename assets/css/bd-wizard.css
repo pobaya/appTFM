@@ -64,7 +64,8 @@ main {
     font-size: 20px;
     font-weight: bold;
     color: #7b7f89;
-    margin-bottom: 45px; }
+    margin-bottom: 45px;
+    visibility: hidden;	}
   .wizard .content .section-heading {
     font-size: 35px;
     font-weight: bold;
