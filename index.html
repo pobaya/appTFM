@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>BootstrapDash Wizard</title>
+		<link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/css/bd-wizard.css">
+	</head>
+	<body>
+		<header>
+			<nav class="navbar navbar-expand-sm navbar-light bg-white">
+				<div class="container">
+					<a class="navbar-brand" href="#"><img src="assets/images/logo.svg" alt="logo"></a>
+					<button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="collapsibleNavId">
+						<ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+							<li class="nav-item">
+								<a class="nav-link" href="#">Home</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">About</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Contact</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<main class="d-flex align-items-center">
+			<div class="container">
+				<div id="wizard">
+					<h3>Paso 1 Title</h3>
+					<section>
+						<h5 class="bd-wizard-step-title">Paso 1</h5>
+						<h2 class="section-heading">Elemento de la infraestructura</h2>
+						<p>En este paso se procede a seleccionar el elemento de la infraestructura sobre el que se desea estudiar la aplicación de Sistemas Urbanos de Drenaje Sostenible.  </p>
+						<div class="purpose-radios-wrapper">
+							<div class="purpose-radio">
+								<input type="radio" name="C1" id="infraestructuralineal" class="purpose-radio-input" value="IL">
+								<label for="infraestructuralineal" class="purpose-radio-label">
+									<span class="label-text">Infraestructura Lineal</span>
+								</label>
+							</div>
+							<div class="purpose-radio">
+								<input type="radio" name="C1" id="estacion" class="purpose-radio-input" value="ES">
+								<label for="estacion" class="purpose-radio-label">
+									<span class="label-text">Estación</span>
+								</label>
+							</div>
+							<div class="purpose-radio">
+								<input type="radio" name="C1" id="apeadero" class="purpose-radio-input" value="APE">
+								<label for="apeadero" class="purpose-radio-label">
+									<span class="label-text">Apeadero</span>
+								</label>
+							</div>
+							<div class="purpose-radio">
+								<input type="radio" name="C1" id="terminalmercancias" class="purpose-radio-input" value="TM">
+								<label for="terminalmercancias" class="purpose-radio-label">
+									<span class="label-text">Terminal de mercancias</span>
+								</label>
+							</div>
+							<div class="purpose-radio">
+								<input type="radio" name="C1" id="apartadero" class="purpose-radio-input" value="APART">
+								<label for="apartadero" class="purpose-radio-label">
+									<span class="label-text">Apartadero</span>
+								</label>
+							</div>
+							<div class="purpose-radio">
+								<input type="radio" name="C1" id="cargadero" class="purpose-radio-input" value="CAR">
+								<label for="cargadero" class="purpose-radio-label">
+									<span class="label-text">Cargadero</span>
+								</label>
+							</div>
+						</div>
+					</section>
+					<h3>Paso 2 Title</h3>
+					<section>
+						<h5 class="bd-wizard-step-title">Paso 2</h5>
+						<h2 class="section-heading">Estado de la infrastructura</h2>
+						<p>En este paso se procede a determinar el estado actual de la estructura, diferenciando si nos encontramos ante una rehabilitación o una obra nueva. En el caso de encontrarnos ante una rehabilitación será importante indicar si se llevará a cabo una renovación de los firmes.  </p>
+						<div class="purpose-radios-wrapper">
+							<div class="purpose-radio">
+								<input type="radio" name="C5" id="obranueva" class="purpose-radio-input" value="ON">
+								<label for="obranueva" class="purpose-radio-label">
+									<span class="label-text">Obra nueva</span>
+								</label>
+							</div>
+							<div class="purpose-radio">
+								<input type="radio" name="C5" id="rehabilitacion" class="purpose-radio-input" value="RE">
+								<label for="rehabilitacion" class="purpose-radio-label">
+									<span class="label-text">Rehabilitación</span>
+								</label>
+							</div>
+						</div>
+					</section>
+					<h3>Paso 2 B Title</h3>
+					<section>
+						<h5 class="bd-wizard-step-title">Paso 2 B</h5>
+						<h2 class="section-heading">Estado de los firmes</h2>
+						<p>En este paso se procede a determinar los estados de los firmes determinando si es necesaria su renovación.</p>
+						<div class="purpose-radios-wrapper">							
+							<div class="purpose-radio">
+								<input type="radio" name="C5B" id="rehabilitacionsinfirmes" class="purpose-radio-input" value="RSF">
+								<label for="rehabilitacionsinfirmes" class="purpose-radio-label">
+									<span class="label-text">Sin sustitución de firmes</span>
+								</label>
+							</div>
+							<div class="purpose-radio">
+								<input type="radio" name="C5B" id="rehabilitacionconfirmes" class="purpose-radio-input" value="RCF">
+								<label for="rehabilitacionconfirmes" class="purpose-radio-label">
+									<span class="label-text">Con sustitución de firmes</span>
+								</label>
+							</div>
+						</div>
+					</section>
+					<h3>Paso 3 Title</h3>
+					<section>
+						<h5 class="bd-wizard-step-title">Paso 3</h5>
+						<h2 class="section-heading">Objetivo Final de las aguas</h2>
+						<p>En este paso se procede a seleccionar el objetivo a alcanzar con las aguas, bien sea la reutilización, la ilfiltración o el vertido a un cauce natural.  </p>
+						<div class="purpose-radios-wrapper">
+							<div class="purpose-radio">
+								<input type="radio" name="C2" id="infiltracion" class="purpose-radio-input" value="INF">
+								<label for="infiltracion" class="purpose-radio-label">
+									<span class="label-text">Infiltración</span>
+								</label>
+							</div>
+							<div class="purpose-radio">
+								<input type="radio" name="C2" id="reutilizacion" class="purpose-radio-input" value="REU">
+								<label for="reutilizacion" class="purpose-radio-label">
+									<span class="label-text">Reutilización</span>
+								</label>
+							</div>
+							<div class="purpose-radio">
+								<input type="radio" name="C2" id="vertido" class="purpose-radio-input" value="VCN">
+								<label for="vertido" class="purpose-radio-label">
+									<span class="label-text">Vertido Cauce Natural</span>
+								</label>
+							</div>					
+						</div>
+					</section>
+					<h3>Paso 4 Title</h3>
+					<section>
+						<h5 class="bd-wizard-step-title">Paso 4</h5>
+						<h2 class="section-heading">Zona Climática</h2>
+						<p>En este paso se procede a seleccionar la zona climatica de estudio mediante la clasificación de Köppen. En caso de no conocer la clasificación o no estar entre las opciones la seleccionada vastará con decidir si tiene o no estación seca  </p>
+						<div class="purpose-radios-wrapper">
+							<div class="purpose-radio">
+								<input type="radio" name="C3" id="cfd" class="purpose-radio-input" value="CFD">
+								<label for="cfd" class="purpose-radio-label">
+									<span class="label-text">Cfd</span>
+								</label>
+							</div>
+							<div class="purpose-radio">
+								<input type="radio" name="C3" id="csb" class="purpose-radio-input" value="CSB">
+								<label for="csb" class="purpose-radio-label">
+									<span class="label-text">Csb</span>
+								</label>
+							</div>
+							<div class="purpose-radio">
+								<input type="radio" name="C3" id="csa" class="purpose-radio-input" value="CSA">
+								<label for="csa" class="purpose-radio-label">
+									<span class="label-text">Csa</span>
+								</label>
+							</div>
+							<div class="purpose-radio">
+								<input type="radio" name="C3" id="bsk" class="purpose-radio-input" value="BSK">
+								<label for="bsk" class="purpose-radio-label">
+									<span class="label-text">Bsk</span>
+								</label>
+							</div>
+							<div class="purpose-radio">
+								<input type="radio" name="C3" id="otroseco" class="purpose-radio-input" value="ESS">
+								<label for="otroseco" class="purpose-radio-label">
+									<span class="label-text">Otro con estación seca</span>
+								</label>
+							</div>
+							<div class="purpose-radio">
+								<input type="radio" name="C3" id="otrohumedo" class="purpose-radio-input" value="ESN">
+								<label for="otrohumedo" class="purpose-radio-label">
+									<span class="label-text">Otro sin estación seca</span>
+								</label>
+							</div>					
+						</div>
+					</section>
+					<h3>Paso 5 Title</h3>
+					<section>
+						<h5 class="bd-wizard-step-title">Paso 5</h5>
+						<h2 class="section-heading">Índice de Torrencionalidad</h2>
+						<p>En este paso se procede a seleccionar el índice de torrencionalidad en base a los mapas de la Instrucción de carreteras IC-5.2 Drenaje Superficial.  </p>
+						<div class="purpose-radios-wrapper">
+							<div class="purpose-radio">
+								<input type="radio" name="C4" id="menor" class="purpose-radio-input" value="BT">
+								<label for="menor" class="purpose-radio-label">
+									<span class="label-text">Menor o Igual de 10</span>
+								</label>
+							</div>
+							<div class="purpose-radio">
+								<input type="radio" name="C4" id="mayor" class="purpose-radio-input" value="AT">
+								<label for="mayor" class="purpose-radio-label">
+									<span class="label-text">Mayor de 10</span>
+								</label>
+							</div>					
+						</div>
+					</section>
+					<h3>Paso 6 Title</h3>
+					<section>
+						<h5 class="bd-wizard-step-title">Paso 6</h5>
+						<h2 class="section-heading">Disponibilidad de espacio</h2>
+						<p>En este paso se procede a seleccionar la disponibilidad de espacio. Este parametro tiene importancia en las rehabilitaciones sin renovación de firmes, por un lado tendremos el espacio limitado en entornos urbanos altamente edificados o espacio "ilimitado" en entornos no tan edificados.  </p>
+						<div class="purpose-radios-wrapper">
+							<div class="purpose-radio">
+								<input type="radio" name="C6" id="conespacio" class="purpose-radio-input" value="CE">
+								<label for="conespacio" class="purpose-radio-label">
+									<span class="label-text">Espacio "ilimitado"</span>
+								</label>
+							</div>
+							<div class="purpose-radio">
+								<input type="radio" name="C6" id="sinespacio" class="purpose-radio-input" value="SE">
+								<label for="sinespacio" class="purpose-radio-label">
+									<span class="label-text">Espacio limitado</span>
+								</label>
+							</div>					
+						</div>
+					</section>
+					<h3>Resultado Title</h3>
+					<section>
+						<h5 class="bd-wizard-step-title">Resultado</h5>
+						<h2 class="section-heading mb-5">Review your Details and Submit</h2>
+						<h6 class="font-weight-bold">Sus Respuestas</h6>
+						<p class="mb-4" id="C1"></p>
+						<p class="mb-4" id="C2"></p>
+						<p class="mb-4" id="C3"></p>
+						<p class="mb-4" id="C4"></p>
+						<p class="mb-4" id="C5"></p>
+						<p class="mb-4" id="C6"></p>		  	
+						
+						<h6 class="font-weight-bold">Resultado</h6>
+						<p class="font-weight-bold" id="R1">Sin Evaluar</p>
+						<p class="font-weight-bold" id="R2"></p>
+						<p class="font-weight-bold" id="R3"></p>
+						<p class="font-weight-bold" id="R4"></p>			  
+				</div>						
+					</section>
+	
+
+			</div>			
+					
+		</main>
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+		<script src="assets/js/jquery.steps.min.js"></script>
+		<script src="assets/js/bd-wizard.js"></script>
+	</body>
+</html>
