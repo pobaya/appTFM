@@ -4,7 +4,7 @@ body {
 .navbar-light {
   border-bottom: solid 1px #e9ecf4; }
   .navbar-light .navbar-brand img {
-    height: 25px; }
+    height: 75px; }
   .navbar-light .navbar-nav .nav-link {
     padding: 30px 15px;
     font-size: 16px;
@@ -28,7 +28,7 @@ main {
 
 .wizard .steps {
   padding-top: 30px;
-  padding-bottom: 30px; }
+  padding-bottom: 5px; }
   .wizard .steps > ul {
     list-style: none;
     padding-left: 0;
@@ -45,13 +45,13 @@ main {
       display: inline-block; }
     .wizard .steps > ul li span.number {
       display: inline-block;
-      width: 50px;
-      height: 50px;
+      width: 40px;
+      height: 40px;
       border: 2px solid #fff;
       border-radius: 50%;
       background-color: #7b7f89;
       text-align: center;
-      line-height: 50px;
+      line-height: 36px;
       color: #fff; }
     .wizard .steps > ul li.current span.number, .wizard .steps > ul li.done span.number {
       background-color: #00d69f; }
@@ -64,7 +64,7 @@ main {
     font-size: 20px;
     font-weight: bold;
     color: #7b7f89;
-    margin-bottom: 45px;
+    margin-bottom: 10px;
     visibility: hidden;	}
   .wizard .content .section-heading {
     font-size: 35px;

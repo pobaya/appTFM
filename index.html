@@ -7,27 +7,45 @@
 		<title>SudsFerrocarriles Wizard</title>
 		<link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 		<link rel="stylesheet" href="assets/css/bd-wizard.css">
+		  <style>
+			  /* Make the image fully responsive */
+			  .carousel-inner img {
+				width: 100%;
+				height: 100%;
+			  }
+			  #image-box{
+				width: 300px;
+				height: 300px;
+				position: relative;
+				overflow: hidden;
+			}
+
+
+				#caption {
+				  width: 100%;
+				  color: #fff;
+				  margin: 0;
+				  padding: 5px;
+				  background-color: rgba(0,0,0,1); /* asignar el color y  transparencia */
+				  position: absolute;
+				  bottom: 0;
+				}
+		  </style> 	  
 	</head>
 	<body>
 		<header>
 			<nav class="navbar navbar-expand-sm navbar-light bg-white">
 				<div class="container">
-					<a class="navbar-brand" href="#"><img src="assets/images/logo.svg" alt="logo"></a>
+					<a class="navbar-brand" href="#"><img src="assets/images/logo.png" alt="logo"></a>
 					<button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
 					<div class="collapse navbar-collapse" id="collapsibleNavId">
 						<ul class="navbar-nav ml-auto mt-2 mt-lg-0">
 							<li class="nav-item">
-								<a class="nav-link" href="#">Home</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">About</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">Contact</a>
+								<a class="nav-link" id="about" href="#">About</a>
 							</li>
 						</ul>
 					</div>
@@ -84,7 +102,7 @@
 					<h3>Paso 2 Title</h3>
 					<section>
 						<h5 class="bd-wizard-step-title">Paso 2</h5>
-						<h2 class="section-heading">Estado de la infrastructura</h2>
+						<h2 class="section-heading">Estado de la infraestructura</h2>
 						<p>En este paso se procede a determinar el estado actual de la estructura, diferenciando si nos encontramos ante una rehabilitación o una obra nueva. En el caso de encontrarnos ante una rehabilitación será importante indicar si se llevará a cabo una renovación de los firmes.  </p>
 						<div class="purpose-radios-wrapper">
 							<div class="purpose-radio">
@@ -104,19 +122,19 @@
 					<h3>Paso 2 B Title</h3>
 					<section>
 						<h5 class="bd-wizard-step-title">Paso 2 B</h5>
-						<h2 class="section-heading">Estado de los firmes</h2>
-						<p>En este paso se procede a determinar los estados de los firmes determinando si es necesaria su renovación.</p>
+						<h2 class="section-heading">Estado de los pavimentos</h2>
+						<p>En este paso se procede a determinar los estados de los pavimentos determinando si es necesaria su renovación.</p>
 						<div class="purpose-radios-wrapper">							
 							<div class="purpose-radio">
 								<input type="radio" name="C5B" id="rehabilitacionsinfirmes" class="purpose-radio-input" value="RSF">
 								<label for="rehabilitacionsinfirmes" class="purpose-radio-label">
-									<span class="label-text">Sin sustitución de firmes</span>
+									<span class="label-text">Sin sustitución de pavimentos</span>
 								</label>
 							</div>
 							<div class="purpose-radio">
 								<input type="radio" name="C5B" id="rehabilitacionconfirmes" class="purpose-radio-input" value="RCF">
 								<label for="rehabilitacionconfirmes" class="purpose-radio-label">
-									<span class="label-text">Con sustitución de firmes</span>
+									<span class="label-text">Con sustitución de pavimentos</span>
 								</label>
 							</div>
 						</div>
@@ -125,7 +143,7 @@
 					<section>
 						<h5 class="bd-wizard-step-title">Paso 3</h5>
 						<h2 class="section-heading">Objetivo Final de las aguas</h2>
-						<p>En este paso se procede a seleccionar el objetivo a alcanzar con las aguas, bien sea la reutilización, la ilfiltración o el vertido a un cauce natural.  </p>
+						<p>En este paso se procede a seleccionar el objetivo a alcanzar con las aguas, bien sea la reutilización, la infiltración o el vertido a un cauce natural.  </p>
 						<div class="purpose-radios-wrapper">
 							<div class="purpose-radio">
 								<input type="radio" name="C2" id="infiltracion" class="purpose-radio-input" value="INF">
@@ -151,7 +169,7 @@
 					<section>
 						<h5 class="bd-wizard-step-title">Paso 4</h5>
 						<h2 class="section-heading">Zona Climática</h2>
-						<p>En este paso se procede a seleccionar la zona climatica de estudio mediante la clasificación de Köppen. En caso de no conocer la clasificación o no estar entre las opciones la seleccionada vastará con decidir si tiene o no estación seca  </p>
+						<p>En este paso se procede a seleccionar la zona climatica de estudio mediante la clasificación de Köppen. En caso de no conocer la clasificación o no estar entre las opciones la seleccionada bastará con decidir si tiene o no estación seca  </p>
 						<div class="purpose-radios-wrapper">
 							<div class="purpose-radio">
 								<input type="radio" name="C3" id="cfd" class="purpose-radio-input" value="CFD">
@@ -234,26 +252,81 @@
 					<h3>Resultado Title</h3>
 					<section>
 						<h5 class="bd-wizard-step-title">Resultado</h5>
-						<h2 class="section-heading mb-5">Review your Details and Submit</h2>
-						<h6 class="font-weight-bold">Sus Respuestas</h6>
-						<p class="mb-4" id="C1"></p>
-						<p class="mb-4" id="C2"></p>
-						<p class="mb-4" id="C3"></p>
-						<p class="mb-4" id="C4"></p>
-						<p class="mb-4" id="C5"></p>
-						<p class="mb-4" id="C6"></p>		  	
-						
-						<h6 class="font-weight-bold">Resultado</h6>
-						<p class="font-weight-bold" id="R1">Sin Evaluar</p>
+						<h2 class="section-heading mb-5">Resultado</h2>
+						<h6 hidden class="font-weight-bold">Sus Respuestas</h6>
+ 						<p hidden class="mb-4" id="C1"></p>
+						<p hidden class="mb-4" id="C2"></p>
+						<p hidden class="mb-4" id="C3"></p>
+						<p hidden class="mb-4" id="C4"></p>
+						<p hidden class="mb-4" id="C5"></p>
+						<p hidden class="mb-4" id="C6"></p>
+					
+						<p class="font-weight-bold" id="R1">Sin Evaluar, Pulse el botón "Calcular"</p>
 						<p class="font-weight-bold" id="R2"></p>
 						<p class="font-weight-bold" id="R3"></p>
-						<p class="font-weight-bold" id="R4"></p>			  
-				</div>						
+						<p class="font-weight-bold" id="R4"></p>	
+						<div id="resultado" class="carousel slide" data-ride="carousel">
+						  <!-- Indicators -->
+<!-- 						  <ul class="carousel-indicators">
+							<li data-target="#resultado" data-slide-to="0" class="active"></li>
+							<li data-target="#resultado" data-slide-to="1"></li>
+							<li data-target="#resultado" data-slide-to="2"></li>
+						  </ul> -->
+
+						  <!-- The slideshow -->
+<!-- 					  <div id="resulItems" class="carousel-inner">
+							<div class="carousel-item active">
+							  <img src="assets/images/Alcorque estructual.png" alt="R1img">
+							</div>
+							<div class="carousel-item">
+							  <img src="assets/images/Cunetas verdes.png" alt="R2img">
+							</div>
+						  </div> -->
+
+						  <!-- Left and right controls -->
+						  <a class="carousel-control-prev" href="#resultado" data-slide="prev">
+							<span class="carousel-control-prev-icon"></span>
+						  </a>
+						  <a class="carousel-control-next" href="#resultado" data-slide="next">
+							<span class="carousel-control-next-icon"></span>
+						  </a>
+
+						</div>						
+										
 					</section>
 	
 
 			</div>			
-					
+		  <!-- The Modal -->
+		  <div class="modal fade" id="myModal">
+			<div class="modal-dialog">
+			  <div class="modal-content">
+			  
+				<!-- Modal Header -->
+				<div class="modal-header">
+				  <h4 class="modal-title">About</h4>
+				  <button type="button" class="close" data-dismiss="modal">×</button>
+				</div>
+				
+				<!-- Modal body -->
+				<div class="modal-body">
+					<p>Las redes ferroviarias son consideradas elementos vertebradores del territorio, cumpliendo con una función fundamental para el desarrollo social y económico. Sin embargo, estas infraestructuras son especialmente sensibles a las inundaciones producidas por eventos climáticos extremos, cada vez más frecuentes.</p>
+					<p>La implementación de estos sistemas posibilita capturar y filtrar las escorrentías superficiales, permitiendo el control del volumen y el tratamiento de los contaminantes, pudiendo ser reutilizadas posteriormente, vertidas a cauces naturales o infiltradas al terreno para la recarga de acuíferos y mantenimiento de los niveles base. </p>
+					<p>En este marco se plantea la utilización de Sistemas Urbanos de Drenaje Sostenible (SUDS), permitiendo los mismos adaptar las necesidades de drenaje, tanto actuales como futuras, salvaguardando las infraestructuras que componen la red ferroviaria.</p>
+					<p>Esta aplicación sirve como asistente de cara a la elección de que SUDS implementar en base a unos parámetros de entrada. </p> 
+
+				</div>
+				
+				<!-- Modal footer -->
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				</div>
+				
+			  </div>
+			</div>
+		  </div>
+		  
+		</div>
 		</main>
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
