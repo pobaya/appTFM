@@ -23,6 +23,9 @@ $("#wizard").steps({
 								 }
 								 
 								$('#R1').text('Sin Evaluar, Pulse el botón "Calcular"');
+								$('#R2').text('');
+								$('#R3').text('');
+								$('#R4').text('');
                               }
 	
 	                          // recupelamos el step actual y su valor                            
@@ -81,17 +84,22 @@ $("#wizard").steps({
 		case "C1":   
 		    //Ocultamos paso 2, 3 y 7       
 			if (stepValue == "IL" || stepValue == "APART" || stepValue == "CAR")  {
-				if  ( gvStep2 == "" ) { 
+				if  ( gvStep7 == "" ) { 
 				    gvStep7 = $("#wizard").steps("getStep", 6);
 					$("#wizard").steps("remove", 6);
 					$('#C7').text("");
+				}
+				if  ( gvStep3 == "" ) { 
 					gvStep3 = $("#wizard").steps("getStep", 2);
 					$("#wizard").steps("remove", 2);
 					$('#C3').text("");
+				}
+				if  ( gvStep2 == "" ) { 				 
 					gvStep2 = $("#wizard").steps("getStep", 1);
 					$("#wizard").steps("remove", 1);
 					$('#C2').text("");
 				}
+
 			} else if ( gvStep2 ) {
 				
 			    $("#wizard").steps("insert", 1, gvStep2); 
@@ -106,10 +114,12 @@ $("#wizard").steps({
 		case "C5":   	
 			//Ocultamos paso 3
 			if (stepValue == "ON")  {
-				if  ( gvStep3 == "" ) { 
+				if  ( gvStep7 == "" ) { 
 					gvStep7 = $("#wizard").steps("getStep", 6);
 					$("#wizard").steps("remove", 6);
 					$('#C7').text("");				
+				}				
+				if  ( gvStep3 == "" ) { 
 					gvStep3 = $("#wizard").steps("getStep", 2);
 					$("#wizard").steps("remove", 2);
 					$('#C3').text("");
@@ -141,7 +151,8 @@ $("#wizard").steps({
 	}
 
 }
-	
+
+   	
 	
   $("#about").click(function(){
     $("#myabout").modal();
@@ -704,6 +715,7 @@ $("#wizard").steps({
  
 	if (lv_key in lt_Result) {	
 	    lt_Result[lv_key].forEach(setPrint); // Recorremos el Array de resultados.	
+		
 		if (document.getElementById("resulItems")) { 
 	     	document.getElementById("resulItems").remove();
          }
@@ -717,21 +729,9 @@ $("#wizard").steps({
 		   document.getElementById("resultFlec2").remove();
 		}
 			 
-		let lo_resulItems = document.createElement("div");
-	    let lo_attr = document.createAttribute("id");    
-		    lo_attr.value = "resulItems";
-		    lo_resulItems.setAttributeNode(lo_attr);	
-			lo_attr = "";
-			lo_attr = document.createAttribute("class");    
-		    lo_attr.value = "carousel-inner";
-			lo_resulItems.setAttributeNode(lo_attr);	
-			lo_attr = "";
 			 
-            lo_resulItems.innerHTML = lt_Result[lv_key].map(setItemimage);
-            document.getElementById("resultado").appendChild(lo_resulItems);
-		 
 		let lo_resultInd = document.createElement("ul");
-		    lo_attr = document.createAttribute("id");    
+		let lo_attr = document.createAttribute("id");    
 		    lo_attr.value = "resultInd";
 		    lo_resultInd.setAttributeNode(lo_attr);	
 			lo_attr = "";
@@ -740,6 +740,7 @@ $("#wizard").steps({
 			lo_resultInd.setAttributeNode(lo_attr);	
 			lo_attr = "";
 			lo_resultInd.innerHTML = lt_Result[lv_key].map(setInd);
+			lo_resultInd.innerHTML = lo_resultInd.innerHTML.split(",").join("");
             document.getElementById("resultado").appendChild(lo_resultInd);
 			
 		let lo_resultFlec1 = document.createElement("a");
@@ -781,7 +782,20 @@ $("#wizard").steps({
 			lo_attr = "";
 			lo_resultFlec2.innerHTML = '<span class="carousel-control-next-icon"></span>';
 			document.getElementById("resultado").appendChild(lo_resultFlec2);
-			
+		
+		let lo_resulItems = document.createElement("div");
+	        lo_attr = document.createAttribute("id");    
+		    lo_attr.value = "resulItems";
+		    lo_resulItems.setAttributeNode(lo_attr);	
+			lo_attr = "";
+			lo_attr = document.createAttribute("class");    
+		    lo_attr.value = "carousel-inner";
+			lo_resulItems.setAttributeNode(lo_attr);	
+			lo_attr = "";
+               		
+            lo_resulItems.innerHTML = lt_Result[lv_key].map(setItemimage);
+			lo_resulItems.innerHTML = lo_resulItems.innerHTML.split(",").join("");
+            document.getElementById("resultado").appendChild(lo_resulItems);		
 			
 	} else {
 			$("#R1").text("Key not found")	
@@ -790,22 +804,24 @@ $("#wizard").steps({
 	
 function setPrint(item, index, arr) { 
       let name = "#R" + (index + 1); //debido a que comienza en 0
-	  //$(name).text(item);	
-	  $(name).text("");	
+	  $(name).text(item);	
+	  //$(name).text("");	
 	 
 	 	  
 	}
 	
 function setItemimage(item, index, arr) { 
          
-	  let lv_str = '<div class="carousel-item ' + ((index == 0) ? 'active':'' ) + '"> <img src="assets/images/' + item + '.png" alt="R' + index + '"> </div>';
+//	  let lv_str = '<div class="carousel-item' + ((index == 0) ? ' active':'' ) + '"> <img src="assets/images/' + item + '.png" alt="R' + index + '"> </div>';	  
+	  let lv_str = '<div class="carousel-item' + ((index == 0) ? ' active':'' ) + '"> <img src="assets/images/' + item + '.png"	> </div>';	  
 	  return lv_str;
 	 	 	  
 	}	
 
 function setInd(item, index, arr) { 
          
-	  let lv_str = '<li data-target="#resultado" data-slide-to="' + index + '"' + ((index == 0) ? ' class="active"':'' ) + '></li>';
+//	  let lv_str = '<li class="item' + (index+1) + ((index == 0) ? ' active':'' ) + '"></li>';
+	  let lv_str = '<li data-target="#resultado" data-slide-to="' + (index+1) + '"' + ((index == 0) ? ' class="active"':' class' ) + '></li>';
 	  return lv_str;
 	 	 	  
 	}		
