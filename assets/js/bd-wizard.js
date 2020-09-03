@@ -15,6 +15,13 @@ $("#wizard").steps({
 								 if (document.getElementById("resultInd")) {
 								   document.getElementById("resultInd").remove();
 								 }
+								 if (document.getElementById("resultFlec1")) {
+								   document.getElementById("resultFlec1").remove();
+								 }
+								 if (document.getElementById("resultFlec2")) {
+								   document.getElementById("resultFlec2").remove();
+								 }
+								 
 								$('#R1').text('Sin Evaluar, Pulse el botón "Calcular"');
                               }
 	
@@ -137,7 +144,10 @@ $("#wizard").steps({
 	
 	
   $("#about").click(function(){
-    $("#myModal").modal();
+    $("#myabout").modal();
+  });
+    $("#contact").click(function(){
+    $("#mycontact").modal();
   });
   
 /* Datos */
@@ -697,6 +707,16 @@ $("#wizard").steps({
 		if (document.getElementById("resulItems")) { 
 	     	document.getElementById("resulItems").remove();
          }
+		if (document.getElementById("resultInd")) {
+		   document.getElementById("resultInd").remove();
+		}
+		if (document.getElementById("resultFlec1")) {
+		   document.getElementById("resultFlec1").remove();
+		}
+		if (document.getElementById("resultFlec2")) {
+		   document.getElementById("resultFlec2").remove();
+		}
+			 
 		let lo_resulItems = document.createElement("div");
 	    let lo_attr = document.createAttribute("id");    
 		    lo_attr.value = "resulItems";
@@ -721,6 +741,46 @@ $("#wizard").steps({
 			lo_attr = "";
 			lo_resultInd.innerHTML = lt_Result[lv_key].map(setInd);
             document.getElementById("resultado").appendChild(lo_resultInd);
+			
+		let lo_resultFlec1 = document.createElement("a");
+		    lo_attr = document.createAttribute("id");    
+		    lo_attr.value = "resultFlec1";
+		    lo_resultFlec1.setAttributeNode(lo_attr);	
+			lo_attr = "";	
+			lo_attr = document.createAttribute("class");    
+		    lo_attr.value = "carousel-control-prev";
+		    lo_resultFlec1.setAttributeNode(lo_attr);	
+			lo_attr = "";	
+			lo_attr = document.createAttribute("href");    
+		    lo_attr.value = "#resultado";
+		    lo_resultFlec1.setAttributeNode(lo_attr);	
+			lo_attr = "";	
+			lo_attr = document.createAttribute("data-slide");    
+		    lo_attr.value = "prev";
+		    lo_resultFlec1.setAttributeNode(lo_attr);	
+			lo_attr = "";
+			lo_resultFlec1.innerHTML = '<span class="carousel-control-prev-icon"></span>';
+			document.getElementById("resultado").appendChild(lo_resultFlec1);
+		
+		let lo_resultFlec2 = document.createElement("a");
+		    lo_attr = document.createAttribute("id");    
+		    lo_attr.value = "resultFlec2";
+		    lo_resultFlec2.setAttributeNode(lo_attr);	
+			lo_attr = "";	
+			lo_attr = document.createAttribute("class");    
+		    lo_attr.value = "carousel-control-next";
+		    lo_resultFlec2.setAttributeNode(lo_attr);	
+			lo_attr = "";	
+			lo_attr = document.createAttribute("href");    
+		    lo_attr.value = "#resultado";
+		    lo_resultFlec2.setAttributeNode(lo_attr);	
+			lo_attr = "";	
+			lo_attr = document.createAttribute("data-slide");    
+		    lo_attr.value = "prev";
+		    lo_resultFlec2.setAttributeNode(lo_attr);	
+			lo_attr = "";
+			lo_resultFlec2.innerHTML = '<span class="carousel-control-next-icon"></span>';
+			document.getElementById("resultado").appendChild(lo_resultFlec2);
 			
 			
 	} else {

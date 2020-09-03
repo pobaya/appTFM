@@ -21,17 +21,17 @@
 				position: relative;
 				overflow: hidden;
 			}
+	
+			.carousel-control-prev-icon, .carousel-control-next-icon {
+				height: 50px;
+				width: 50px;
+				outline: #7b7f89;
+				background-color: rgba(39, 174, 96, 0.4);
+				background-size: 100%, 100%;	
+				border-radius: 50%;
+				
+			}
 
-
-				#caption {
-				  width: 100%;
-				  color: #fff;
-				  margin: 0;
-				  padding: 5px;
-				  background-color: rgba(0,0,0,1); /* asignar el color y  transparencia */
-				  position: absolute;
-				  bottom: 0;
-				}
 		  </style> 	  
 	</head>
 	<body>
@@ -47,6 +47,9 @@
 							<li class="nav-item">
 								<a class="nav-link" id="about" href="#">About</a>
 							</li>
+							<li class="nav-item">
+								<a class="nav-link" id="contact" href="#">Contact</a>
+							</li>							
 						</ul>
 					</div>
 				</div>
@@ -284,12 +287,12 @@
 						  </div> -->
 
 						  <!-- Left and right controls -->
-						  <a class="carousel-control-prev" href="#resultado" data-slide="prev">
+<!-- 						  <a class="carousel-control-prev" href="#resultado" data-slide="prev">
 							<span class="carousel-control-prev-icon"></span>
 						  </a>
 						  <a class="carousel-control-next" href="#resultado" data-slide="next">
 							<span class="carousel-control-next-icon"></span>
-						  </a>
+						  </a> -->
 
 						</div>						
 										
@@ -298,7 +301,7 @@
 
 			</div>			
 		  <!-- The Modal -->
-		  <div class="modal fade" id="myModal">
+		  <div class="modal fade" id="myabout">
 			<div class="modal-dialog">
 			  <div class="modal-content">
 			  
@@ -325,6 +328,30 @@
 			  </div>
 			</div>
 		  </div>
+		  <div class="modal fade" id="mycontact">
+			<div class="modal-dialog">
+			  <div class="modal-content">
+			  
+				<!-- Modal Header -->
+				<div class="modal-header">
+				  <h4 class="modal-title">Contact</h4>
+				  <button type="button" class="close" data-dismiss="modal">×</button>
+				</div>
+				
+				<!-- Modal body -->
+				<div class="modal-body">
+					<p>Alvaro Alvarez Fernández</p>
+					<p>alvaro492@gmail.com</p>
+				</div>
+				
+				<!-- Modal footer -->
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				</div>
+				
+			  </div>
+			</div>
+		  </div>		  
 		  
 		</div>
 		</main>
