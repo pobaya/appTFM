@@ -777,7 +777,7 @@ $("#wizard").steps({
 		    lo_resultFlec2.setAttributeNode(lo_attr);	
 			lo_attr = "";	
 			lo_attr = document.createAttribute("data-slide");    
-		    lo_attr.value = "prev";
+		    lo_attr.value = "next";
 		    lo_resultFlec2.setAttributeNode(lo_attr);	
 			lo_attr = "";
 			lo_resultFlec2.innerHTML = '<span class="carousel-control-next-icon"></span>';
